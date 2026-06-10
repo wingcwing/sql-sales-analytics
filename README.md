@@ -27,7 +27,7 @@ Data cleansing, transformation, and dimensional modeling were completed in the D
 ## 📁 Repository Structure
 
 ```text
-sql-sales-analytics/
+scripts/
 │
 ├── 01_customer_analytics/
 │   ├── 01_customer_report.sql
