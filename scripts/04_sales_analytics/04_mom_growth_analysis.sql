@@ -19,7 +19,7 @@ FROM gold.fact_sales
 WHERE order_date IS NOT NULL
 GROUP BY DATETRUNC (MONTH, order_date)
 )
-, previous_month AS (
+, monthly_growth AS (
 SELECT  
     current_month, 
     current_month_sales,
@@ -31,5 +31,5 @@ SELECT
     current_month_sales,
     previous_month_sales, 
     CAST((current_month_sales - previous_month_sales) * 100.0 / NULLIF(previous_month_sales,0) AS decimal(10,2)) AS mom_growth_pct
-FROM previous_month
+FROM monthly_growth
 ORDER BY current_month;
